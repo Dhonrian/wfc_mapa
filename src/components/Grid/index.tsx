@@ -1,6 +1,8 @@
 import React from "react";
 import style from './Grid.module.scss';
 
+import { Td } from "./Td";
+
 interface TableSize{
     width: number,
     heigth: number
@@ -34,12 +36,13 @@ export default function Grid(props: TableSize){
                 {table.map((row, rowI) => (
                     <tr key={rowI}>
                         {row.map((col, colI) => (
-                            <td key={colI}>{col}</td>
+                            <Td col={col} key={colI}></Td>
                         ))}
                     </tr>
                 ))}
                 </tbody>
             </table>
+
         </div>
     );
 }
